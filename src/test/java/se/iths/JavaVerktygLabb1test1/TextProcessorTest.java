@@ -5,7 +5,6 @@ import org.junit.jupiter.api.*;
 
 public class TextProcessorTest {
 
-
     @BeforeAll
     static void startAlltests(){
         System.out.println("Startar testning...");
@@ -24,6 +23,12 @@ public class TextProcessorTest {
     public void testToLowerCase(){
         TextProcessor textProcessor = new TextProcessor();
         Assertions.assertNotNull(textProcessor.toLowerCase("HEJSAN"));
+    }
+
+    @Test
+    public void testReverseText(){
+        TextProcessor textProcessor = new TextProcessor();
+        Assertions.assertEquals("Hejsan", textProcessor.reverseText("nasjeH"));
     }
     @AfterEach
     void endOfTest(){
